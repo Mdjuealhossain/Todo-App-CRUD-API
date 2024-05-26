@@ -6,9 +6,10 @@ import Todos from "./components/Todos";
 import Form from "./components/Form";
 
 const getLocalStories = () => {
-  let todos = localStorage.getItem("todos");
+  let todos =
+    typeof window !== "undefined" ? localStorage.getItem("todos") : null;
   if (todos) {
-    return (todos = JSON.parse(localStorage.getItem("todos")));
+    return JSON.parse(localStorage.getItem("todos"));
   } else {
     return [];
   }
