@@ -12,7 +12,7 @@ const CrudApi = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await usegetdata();
-      setCardData(result.slice(0,20));
+      setCardData(result);
     };
     fetchData();
   }, []);
@@ -29,7 +29,7 @@ const CrudApi = () => {
   
   return (
     <div className=" container max-w-[800px] mx-auto flex flex-col gap-8 mt-10">
-      <h1 className=" text-2xl font-bold text-center">CRUD Oparetion For GET, POST, DELETE, PATCH</h1>
+      <h1 className=" text-2xl font-bold text-center">CRUD Oparetion For GET, POST, DELETE, PATCH {cardData.length}</h1>
       <InputForm />
       <Cards datas={cardData} deleteItem={deleteItem} />
     </div>
