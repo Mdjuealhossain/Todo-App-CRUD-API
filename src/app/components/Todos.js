@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { MdDeleteForever } from "react-icons/md";
-import Svg from "/public/Assests/okicon.svg";
+
 import Todo from "./Todo";
 
 const Todos = ({ allTodos, removeTodo }) => {
@@ -13,7 +13,7 @@ const Todos = ({ allTodos, removeTodo }) => {
       {allTodos.map((todo) => {
         return (
           <Todo
-            todo={todo.todo}
+            todo={todo}
             key={todo.id}
             id={todo.id}
             removeTodo={removeTodo}

@@ -17,6 +17,7 @@ const getLocalStories = () => {
 
 export default function Home() {
   const [todos, setTodos] = useState(getLocalStories);
+
   const handleNewTodo = (todo) => {
     setTodos((prevTodos) => {
       return [...prevTodos, { id: uuidv4(), todo }];
@@ -32,6 +33,10 @@ export default function Home() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+
+  const deleteItem=(id)=>{
+    setItem(id)
+  }
 
   return (
     <div className=" bg-[#444]  py-8 w-1/2 mx-auto">
